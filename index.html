@@ -104,8 +104,21 @@
             var cellFecha = fila.insertCell(2);
             var cellBorrar = fila.insertCell(3);
 
+             // Agregar botones de editar y eliminar en la fila
+             cellEditar.innerHTML = '<button class="btn btn-warning" onclick="editarFila(' + filaId + ')">Editar</button>';
+            cellInfo.innerHTML = nombreProducto;
+            cellFecha.innerHTML = fecha;
+            cellBorrar.innerHTML = '<button class="btn btn-danger" onclick="eliminarFila(' + filaId + ')">Borrar</button>';
+
+            // Incrementar el identificador de fila
+            filaId++;
+
             // Agregar el producto a la lista de productos existentes
             productosExistentes[nombreProducto] = true;
+
+            // Limpiar los campos del formulario
+            document.getElementById("nombreProducto").value = "";
+            document.getElementById("fecha").value = "";
 
     }
 

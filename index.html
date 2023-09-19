@@ -126,6 +126,32 @@
             editarModal.show();
         }
 
+        function guardarEdicion() {
+            // Obtener los valores editados desde el modal
+            var nombreProductoEditar = document.getElementById("nombreProductoEditar").value;
+            var fechaEditar = document.getElementById("fechaEditar").value;
+
+            // Obtener el data-fila-id del modal
+            var filaId = document.getElementById("editarModal").getAttribute("data-fila-id");
+
+            // Actualizar los valores en la fila original
+            var fila = document.getElementById("fila" + filaId);
+            fila.cells[1].innerHTML = nombreProductoEditar;
+            fila.cells[2].innerHTML = fechaEditar;
+
+            // Ocultar el modal de edición
+            var editarModal = new bootstrap.Modal(document.getElementById('editarModal'));
+            editarModal.hide();
+        }
+
+        function eliminarFila(id) {
+            // Obtener la fila por su identificador
+            var fila = document.getElementById("fila" + id);
+
+            // Eliminar la fila de la tabla
+            fila.parentNode.removeChild(fila);
+        }
+
     </script>
 </body>
 </html>

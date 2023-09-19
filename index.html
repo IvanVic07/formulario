@@ -91,6 +91,13 @@
             alert("El producto ya existe.");
             return;
         }
+         // Crear una nueva fila en la tabla
+         var tabla = document.getElementById("tablaProductos");
+            var fila = tabla.insertRow();
+
+            // Asignar un identificador único a la fila
+            fila.setAttribute("id", "fila" + filaId);
+
     }
     </script>
 </body>

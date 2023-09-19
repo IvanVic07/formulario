@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h1>Información del Producto</h1>
+        <form>
+            <div class="mb-3">
+                <label for="nombreProducto" class="form-label">Producto</label>
+                <input type="text" class="form-control" id="nombreProducto" placeholder="Ingresa el nombre del producto">
+            </div>
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha</label>
+                <input type="date" class="form-control" id="fecha">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar</button>
+        </form>
+    </div>
+
+    <div class="container mt-3">
+        <h2>Tabla de Productos</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Editar</th>
+                    <th>Info del Producto</th>
+                    <th>Fecha</th>
+                    <th>Borrar</th>
+                </tr>
+            </thead>
+            <tbody id="tablaProductos">
+                
+            </tbody>
+        </table>
+    </div>
+
+        <!-- Modal de Edición -->
+<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarModalLabel">Editar Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nombreProductoEditar" class="form-label">Producto</label>
+                        <input type="text" class="form-control" id="nombreProductoEditar">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaEditar" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fechaEditar">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="guardarEdicion()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

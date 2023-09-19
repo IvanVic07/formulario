@@ -104,6 +104,9 @@
             var cellFecha = fila.insertCell(2);
             var cellBorrar = fila.insertCell(3);
 
+            // Agregar el producto a la lista de productos existentes
+            productosExistentes[nombreProducto] = true;
+
     }
 
     function editarFila(id) {
@@ -142,6 +145,20 @@
             // Ocultar el modal de edición
             var editarModal = new bootstrap.Modal(document.getElementById('editarModal'));
             editarModal.hide();
+        }
+
+                function eliminarFila(id) {
+            // Obtener la fila por su identificador
+            var fila = document.getElementById("fila" + id);
+
+            // Obtener el nombre del producto en la fila
+            var nombreProducto = fila.cells[1].innerHTML;
+
+            // Eliminar la fila de la tabla
+            fila.parentNode.removeChild(fila);
+
+            // Eliminar el producto de la lista de productos existentes
+            delete productosExistentes[nombreProducto];
         }
 
 

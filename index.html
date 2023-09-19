@@ -105,6 +105,27 @@
             var cellBorrar = fila.insertCell(3);
 
     }
+
+    function editarFila(id) {
+            // Obtener la fila por su identificador
+            var fila = document.getElementById("fila" + id);
+
+            // Obtener los valores de la fila
+            var nombreProducto = fila.cells[1].innerHTML;
+            var fecha = fila.cells[2].innerHTML;
+
+            // Llenar el modal de edición con los valores de la fila
+            document.getElementById("nombreProductoEditar").value = nombreProducto;
+            document.getElementById("fechaEditar").value = fecha;
+
+            // Establecer el atributo data-fila-id en el modal
+            document.getElementById("editarModal").setAttribute("data-fila-id", id);
+
+            // Mostrar el modal de edición
+            var editarModal = new bootstrap.Modal(document.getElementById('editarModal'));
+            editarModal.show();
+        }
+
     </script>
 </body>
 </html>

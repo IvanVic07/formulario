@@ -19,7 +19,7 @@
                 <label for="fecha" class="form-label">Fecha</label>
                 <input type="date" class="form-control" id="fecha">
             </div>
-            <button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar</button>
+            <button type="button" class="btn btn-outline-primary" onclick="agregarFila()">Agregar Producto</button>
         </form>
     </div>
 
@@ -105,10 +105,10 @@
             var cellBorrar = fila.insertCell(3);
 
              // Agregar botones de editar y eliminar en la fila
-             cellEditar.innerHTML = '<button class="btn btn-warning" onclick="editarFila(' + filaId + ')">Editar</button>';
+             cellEditar.innerHTML = '<button type="button" class="btn btn-outline-warning onclick= "editarFila('+ filaId + ')">Editar</button>';
             cellInfo.innerHTML = nombreProducto;
             cellFecha.innerHTML = fecha;
-            cellBorrar.innerHTML = '<button class="btn btn-danger" onclick="eliminarFila(' + filaId + ')">Borrar</button>';
+            cellBorrar.innerHTML = '<button type="button" class="btn btn-outline-danger onclick="eliminarFila('+ filaId +')">Borrar</button>';
 
             // Incrementar el identificador de fila
             filaId++;

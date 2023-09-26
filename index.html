@@ -20,6 +20,7 @@
                 <input type="text" class="form-control" id="descripcionProducto" placeholder="Ingresa la descripción del producto">
             </div>
             <button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar</button>
+            <button type="button" class="btn btn-secondary" onclick="limpiarCampos()">Limpiar</button>
         </form>
     </div>
 
@@ -218,6 +219,13 @@
                 cellBorrar.innerHTML = '<button class="btn btn-danger" onclick="eliminarFila(' + producto.id + ')">Borrar</button>';
             });
         }
+
+        function limpiarCampos() {
+    // Limpiar los campos del formulario
+    document.getElementById("nombreProducto").value = "";
+    document.getElementById("descripcionProducto").value = "";
+}
+
     </script>
 </body>
 </html>

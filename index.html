@@ -20,7 +20,7 @@
                 <input type="text" class="form-control" id="descripcionProducto" placeholder="Ingresa la descripción del producto">
             </div>
             <button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar</button>
-            <button type="button" class="btn btn-secondary" onclick="limpiarCampos()">Limpiar</button>
+            <button type="button" class="btn btn-success" onclick="limpiarCampos()">Limpiar</button>
         </form>
     </div>
 
@@ -194,11 +194,13 @@
         }
 
         function limpiarCampos() {
-            // Limpiar todos los campos del formulario, incluido el nuevo campo del número de inventario
+            // Limpiar los campos del formulario
             document.getElementById("nombreProducto").value = "";
             document.getElementById("descripcionProducto").value = "";
-            document.getElementById("numeroInventario").value = "";
         }
+
+
+        
         
         function actualizarTabla() {
             // Obtener la tabla de productos

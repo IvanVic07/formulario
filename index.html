@@ -24,6 +24,10 @@
             <div class="mb-3">
                 <label for="descripcionProducto" class="form-label">Descripción del Producto</label>
                 <input type="text" class="form-control" id="descripcionProducto" placeholder="Ingresa la descripción del producto">
+            <div class="mb-3">
+                <label for="numeroInventario" class="form-label">Número de Inventario</label>
+                <input type="text" class="form-control" id="numeroInventario" placeholder="Ingresa el número de inventario">
+                </div>                
             </div>
             <button type="button" class="btn" style="background-color: aquamarine; color: black" onclick="agregarFila()">Agregar</button>
             <button type="button" class="btn" style="background-color: purple; color: white;" onclick="limpiarCampos()">Limpiar</button>
@@ -40,6 +44,7 @@
                     <th>ID</th>
                     <th>Nombre del Producto</th>
                     <th>Descripción del Producto</th>
+                    <th>Número de Inventario</th>
                     <th>Borrar</th>
                 </tr>
             </thead>
@@ -91,9 +96,10 @@
             // Obtener los valores del formulario
             var nombreProducto = document.getElementById("nombreProducto").value;
             var descripcionProducto = document.getElementById("descripcionProducto").value;
+            var numeroInventario = document.getElementById("numeroInventario").value;
 
             // Validar si ambos campos están llenos
-            if (nombreProducto === "" || descripcionProducto === "") {
+            if (nombreProducto === "" || descripcionProducto === "" || numeroInventario === "") {
                 alert("Por favor, completa todos los campos para agregar el producto.");
                 return;
             }
@@ -116,6 +122,7 @@
                 id: proximoID,
                 nombre: nombreProducto,
                 descripcion: descripcionProducto
+                inventario: numeroInventario
             };
 
             // Agregar el producto al array
